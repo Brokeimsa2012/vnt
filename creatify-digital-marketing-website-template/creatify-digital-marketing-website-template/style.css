@@ -323,7 +323,7 @@ i.icon.icon-ns-arrow-right {
     right: 5px;
     display: block;
     border-radius: 28px;
-    background: rgb(243 197 34);
+    background: #22c55e;
     width: 35px;
     height: 35px;
     transition: all .3s ease;
@@ -440,7 +440,7 @@ h2.section-subtitle.liner:before {
     top: 8px;
     left: 0;
     width: 22px;
-    border-bottom: 3px solid #F3C522;
+    border-bottom: 3px solid #22c55e;
 }
 h3.section-title {
     font-family: "Jost", Georgia, serif;
@@ -494,7 +494,7 @@ h3.section-title {
   cursor: pointer;
 }
 #scrollToTopBtn:hover {
-  background-color: #f3c522;
+  background-color: #22c55e;
   color: #fff;
 }
 
@@ -915,7 +915,7 @@ nav#navbar {
   #projects .tabs .tab {
       font-size: 15px;
       color: #fff;
-      background: #f3c522;
+      background: #22c55e;
       padding: 10px;
       margin-right: 10px;
       border-radius: 10px;
@@ -1066,8 +1066,8 @@ nav#navbar {
 }
 #price-table i.icon {
     font-size: 4em;
-    color: #EDBD0E;
-    background: #FEF6DB;
+    color: #22c55e;
+    background: #d5ffdd;
     border-radius: 50%;
     width: 162px;
     height: 162px;
