@@ -23,6 +23,7 @@ body {
   font-weight: 300;
   font-size: 16px;
   color: #555;
+  overflow-x: hidden;
 }
 body.no-scroll {
     overflow: hidden;
@@ -231,6 +232,7 @@ button {
 }
 .btn-wrap {
     margin-top: 70px;
+    border-radius: 15px;
 }
 .btn-wrap a {
     font-weight: 500;
@@ -243,6 +245,7 @@ button {
     background-color: #111;
     color: #fff;
     padding: 20px 30px;
+    border-radius: 15px;
 }
 .btn-pill {
     border-radius: 50px;
