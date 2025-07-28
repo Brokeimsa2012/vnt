@@ -997,26 +997,6 @@
                     backToTop.style.display = 'none';
                 }
             });
-            
-            // Form submission
-            document.getElementById('contactForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                if (validateForm()) {
-                    // Simulate form submission
-                    const submitBtn = this.querySelector('.submit-btn');
-                    const btnText = submitBtn.querySelector('.btn-text');
-                    const btnLoader = submitBtn.querySelector('.btn-loader');
-                    
-                    btnText.style.display = 'none';
-                    btnLoader.style.display = 'inline';
-                    submitBtn.disabled = true;
-                    
-                    setTimeout(() => {
-                        this.style.display = 'none';
-                        document.getElementById('formSuccess').style.display = 'block';
-                    }, 2000);
-                }
-            });
         });
         
         // Auto-rotate testimonials
