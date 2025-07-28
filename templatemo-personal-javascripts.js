@@ -107,9 +107,7 @@ https://templatemo.com/tm-593-personal-shape
             const form = e.target;
             const submitBtn = form.querySelector('.submit-btn');
             const originalText = submitBtn.textContent;
-        
-            console.log('[INFO] Enviando formulario...');
-        
+
             // Loading UI
             submitBtn.textContent = 'Enviando...';
             submitBtn.disabled = true;
@@ -126,10 +124,7 @@ https://templatemo.com/tm-593-personal-shape
                     }
                 });
         
-                console.log(`[INFO] Respuesta recibida - Status: ${response.status}`);
-        
                 if (response.ok) {
-                    console.log('[✅ SUCCESS] Formulario enviado exitosamente.');
         
                     // Éxito visual
                     submitBtn.textContent = '¡Mensaje Enviado! ✓';
