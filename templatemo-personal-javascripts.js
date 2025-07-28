@@ -101,36 +101,53 @@ https://templatemo.com/tm-593-personal-shape
             });
         });
 
-        // Enhanced form submission with better UX
-        document.querySelector('.contact-form').addEventListener('submit', (e) => {
+        document.querySelector('.contact-form').addEventListener('submit', async (e) => {
             e.preventDefault();
-            const submitBtn = document.querySelector('.submit-btn');
-            const originalText = submitBtn.textContent;
             
-            // Add loading state
-            submitBtn.textContent = 'Sending...';
+            const form = e.target;
+            const submitBtn = form.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+        
+            // Loading UI
+            submitBtn.textContent = 'Enviando...';
             submitBtn.disabled = true;
             submitBtn.style.background = 'linear-gradient(135deg, #94a3b8, #64748b)';
-            
-            // Simulate form submission with better feedback
+        
+            const formData = new FormData(form);
+        
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+        
+                if (response.ok) {
+                    // Success
+                    submitBtn.textContent = '¡Mensaje Enviado! ✓';
+                    submitBtn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+                    submitBtn.style.transform = 'scale(1.05)';
+                    setTimeout(() => submitBtn.style.transform = 'scale(1)', 200);
+                    form.reset();
+                } else {
+                    // Error
+                    alert('Error al enviar. Verifica los campos o intenta más tarde.');
+                }
+            } catch (error) {
+                alert('Error de red. Verifica tu conexión.');
+                console.error(error);
+            }
+        
+            // Restore after delay
             setTimeout(() => {
-                submitBtn.textContent = 'Message Sent! ✓';
-                submitBtn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
-                
-                // Show success animation
-                submitBtn.style.transform = 'scale(1.05)';
-                setTimeout(() => {
-                    submitBtn.style.transform = 'scale(1)';
-                }, 200);
-                
-                setTimeout(() => {
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
-                    submitBtn.style.background = '';
-                    document.querySelector('.contact-form').reset();
-                }, 3000);
-            }, 2000);
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                submitBtn.style.background = '';
+            }, 3000);
         });
+        
 
         // Enhanced parallax effect for hero background
         let ticking = false;
