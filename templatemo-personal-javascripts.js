@@ -108,13 +108,15 @@ https://templatemo.com/tm-593-personal-shape
             const submitBtn = form.querySelector('.submit-btn');
             const originalText = submitBtn.textContent;
         
+            console.log('[INFO] Enviando formulario...');
+        
             // Loading UI
             submitBtn.textContent = 'Enviando...';
             submitBtn.disabled = true;
             submitBtn.style.background = 'linear-gradient(135deg, #94a3b8, #64748b)';
         
             const formData = new FormData(form);
-        
+            
             try {
                 const response = await fetch(form.action, {
                     method: 'POST',
@@ -124,23 +126,28 @@ https://templatemo.com/tm-593-personal-shape
                     }
                 });
         
+                console.log(`[INFO] Respuesta recibida - Status: ${response.status}`);
+        
                 if (response.ok) {
-                    // Success
+                    console.log('[✅ SUCCESS] Formulario enviado exitosamente.');
+        
+                    // Éxito visual
                     submitBtn.textContent = '¡Mensaje Enviado! ✓';
                     submitBtn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
                     submitBtn.style.transform = 'scale(1.05)';
                     setTimeout(() => submitBtn.style.transform = 'scale(1)', 200);
                     form.reset();
                 } else {
-                    // Error
+                    const errorData = await response.json().catch(() => ({}));
+                    console.error('[❌ ERROR] Error al enviar:', errorData);
                     alert('Error al enviar. Verifica los campos o intenta más tarde.');
                 }
             } catch (error) {
+                console.error('[❌ ERROR DE RED] No se pudo enviar el formulario:', error);
                 alert('Error de red. Verifica tu conexión.');
-                console.error(error);
             }
         
-            // Restore after delay
+            // Restaurar botón después de 3s
             setTimeout(() => {
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
@@ -148,7 +155,6 @@ https://templatemo.com/tm-593-personal-shape
             }, 3000);
         });
         
-
         // Enhanced parallax effect for hero background
         let ticking = false;
         
