@@ -1,0 +1,3 @@
+[submodule "vnt"]
+    path = vnt
+    url = <repository-url>
