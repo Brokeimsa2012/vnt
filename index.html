@@ -216,6 +216,57 @@
         .chat-message.typing p {
             animation: pulse 1.5s infinite;
         }
+
+        .featured-service {
+            max-width: 800px;
+            margin: 0 auto;
+            transform: scale(1.05);
+        }
+        
+        .service-benefits li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+        
+        .service-benefits i {
+            color: #28a745;
+            font-size: 14px;
+        }
+        
+        .service-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .service-cta.primary {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            flex: 1;
+            min-width: 180px;
+        }
+        
+        .service-cta.secondary {
+            background: linear-gradient(135deg, #28a745, #1e7e34);
+            flex: 1;
+            min-width: 180px;
+        }
+        
+        .service-cta i {
+            margin-right: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .featured-service {
+                transform: none;
+            }
+            
+            .service-actions {
+                flex-direction: column;
+            }
+        }
         
         @keyframes fadeInUp {
             from {
@@ -246,6 +297,420 @@
                 max-height: calc(400px - 120px);
             }
         }
+        /* Corrección del problema principal */
+        .featured-service.full-width {
+            width: 100%; /* Cambiado de 330% a 100% */
+            max-width: none;
+            grid-column: 1 / -1; /* Ocupa todo el ancho del grid container */
+            margin-bottom: 40px;
+        }
+
+        .service-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 0 20px;
+        }
+
+        .service-badge {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .service-rating {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .stars {
+            color: #ffc107;
+        }
+
+        .rating-text {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .service-main-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: start;
+            padding: 0 20px; /* Añadido padding consistente */
+        }
+
+        .portfolio-image.enhanced {
+            height: 400px;
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            width: 100%; /* Asegurar que ocupe todo su contenedor */
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 30px;
+        }
+
+        .overlay-stats {
+            display: flex;
+            justify-content: space-around;
+            color: white;
+            text-align: center;
+        }
+
+        .stat-item h5 {
+            font-size: 24px;
+            margin: 0 0 5px 0;
+            font-weight: bold;
+        }
+
+        .stat-item span {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        .floating-icon {
+            align-self: center;
+            font-size: 60px;
+            color: rgba(255, 255, 255, 0.8);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .service-highlights {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border: 1px solid #dee2e6;
+        }
+
+        .highlight-box i {
+            font-size: 24px;
+            color: #007bff;
+            background: rgba(0, 123, 255, 0.1);
+            padding: 10px;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0; /* Evita que el ícono se contraiga */
+        }
+
+        .highlight-content h5 {
+            margin: 0 0 3px 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .highlight-content span {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .service-features h5 {
+            color: #333;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .additional-info {
+            margin: 25px 0;
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .tab-item {
+            background: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .tab-content ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .tab-content li {
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .portfolio-tech.enhanced {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .tech-category {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .category-label {
+            font-weight: bold;
+            color: #333;
+            min-width: 100px;
+            flex-shrink: 0; /* Evita que la etiqueta se contraiga */
+        }
+
+        .tech-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tech-tag {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .tech-tag.primary { background: #007bff; color: white; }
+        .tech-tag.success { background: #28a745; color: white; }
+        .tech-tag.info { background: #17a2b8; color: white; }
+        .tech-tag.warning { background: #ffc107; color: #212529; }
+        .tech-tag.outline { 
+            background: transparent; 
+            border: 1px solid #007bff; 
+            color: #007bff; 
+        }
+
+        .service-actions.enhanced {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .service-cta {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .service-cta span {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .service-cta small {
+            font-size: 11px;
+            opacity: 0.8;
+        }
+
+        .service-cta.primary {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+        }
+
+        .service-cta.secondary {
+            background: linear-gradient(135deg, #28a745, #1e7e34);
+            color: white;
+        }
+
+        .service-cta.tertiary {
+            background: linear-gradient(135deg, #17a2b8, #138496);
+            color: white;
+        }
+
+        .service-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-cta i {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        /* Mejoras adicionales para el contenedor padre */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            width: 100%;
+        }
+
+        /* Trust indicators styling */
+        .trust-indicators {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .trust-item i {
+            color: #28a745;
+            font-size: 16px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .service-main-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .service-highlights {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .service-actions.enhanced {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .trust-indicators {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .service-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .service-highlights {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-actions.enhanced {
+                grid-template-columns: 1fr;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .portfolio-image.enhanced {
+                height: 250px;
+            }
+            
+            .overlay-stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .tech-category {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .category-label {
+                min-width: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .service-header {
+                padding: 0 10px;
+            }
+            
+            .service-main-content {
+                padding: 0 10px;
+            }
+            
+            .service-badge {
+                font-size: 10px;
+                padding: 6px 12px;
+            }
+            
+            .rating-text {
+                font-size: 12px;
+            }
+            
+            .service-cta {
+                padding: 12px;
+            }
+            
+            .service-cta span {
+                font-size: 13px;
+            }
+            
+            .service-cta small {
+                font-size: 10px;
+            }
+            
+            .trust-indicators {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
+            
     </style>
 </head>
 <body>
@@ -381,127 +846,177 @@
         <!-- Services Section -->
         <section id="services" class="portfolio">
             <div class="container">
-                <h2 class="section-title fade-in">Nuestros Servicios</h2>
+                <h2 class="section-title fade-in">Nuestro Servicio Principal</h2>
                 <p class="section-subtitle fade-in">Especialistas en préstamos con garantía vehicular - Tu vehículo es tu mejor aval</p>
-
+        
                 <div class="portfolio-grid">
-                    <article class="portfolio-item" data-category="vehicular">
-                        <div class="portfolio-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
-                        <div class="portfolio-content">
-                            <h4>Préstamos con Garantía Vehicular</h4>
-                            <p>Obtén el financiamiento que necesitas utilizando tu vehículo como garantía. La opción más rápida y flexible del mercado.</p>
-                            <ul class="service-benefits">
-                                <li>✓ Hasta $500,000 pesos</li>
-                                <li>✓ Tasas desde 2.5% mensual</li>
-                                <li>✓ Aprobación en 24 horas</li>
-                                <li>✓ Mantienes tu vehículo</li>
-                            </ul>
-                            <div class="portfolio-tech">
-                                <span class="tech-tag">Rápido</span>
-                                <span class="tech-tag">Seguro</span>
-                                <span class="tech-tag">Sin Complicaciones</span>
+                    <article class="portfolio-item featured-service full-width" data-category="vehicular">
+                        <div class="service-header">
+                            <div class="service-badge">
+                                <i class="fas fa-car"></i>
+                                <span>SERVICIO PRINCIPAL</span>
                             </div>
-                            <button class="service-cta" onclick="openServiceModal('vehicular')">Más Información</button>
+                            <div class="service-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-text">4.9/5 - 2,500+ clientes satisfechos</span>
+                            </div>
                         </div>
-                    </article>
-
-                    <article class="portfolio-item" data-category="vehicular">
-                        <div class="portfolio-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
-                        <div class="portfolio-content">
-                            <h4>Refinanciamiento Vehicular</h4>
-                            <p>¿Ya tienes un préstamo vehicular? Mejora las condiciones con nosotros. Obtén mejores tasas y plazos más convenientes.</p>
-                            <ul class="service-benefits">
-                                <li>✓ Mejores tasas de interés</li>
-                                <li>✓ Plazos extendidos</li>
-                                <li>✓ Liberación de garantías</li>
-                                <li>✓ Proceso simplificado</li>
-                            </ul>
-                            <div class="portfolio-tech">
-                                <span class="tech-tag">Ahorro</span>
-                                <span class="tech-tag">Flexible</span>
-                                <span class="tech-tag">Beneficioso</span>
+        
+                        <div class="service-main-content">
+                            <div class="service-left">
+                                <div class="portfolio-image enhanced" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                                    <div class="image-overlay">
+                                        <div class="overlay-stats">
+                                            <div class="stat-item">
+                                                <h5>15+</h5>
+                                                <span>Años de experiencia</span>
+                                            </div>
+                                            <div class="stat-item">
+                                                <h5>24h</h5>
+                                                <span>Aprobación rápida</span>
+                                            </div>
+                                            <div class="stat-item">
+                                                <h5>98%</h5>
+                                                <span>Tasa de aprobación</span>
+                                            </div>
+                                        </div>
+                                        <div class="floating-icon">
+                                            <i class="fas fa-shield-alt"></i>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <button class="service-cta" onclick="openServiceModal('refinanciamiento')">Más Información</button>
-                        </div>
-                    </article>
-
-                    <article class="portfolio-item" data-category="vehicular">
-                        <div class="portfolio-image" style="background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);"></div>
-                        <div class="portfolio-content">
-                            <h4>Préstamos de Alto Monto</h4>
-                            <p>Para vehículos de mayor valor. Accede a montos superiores con las mejores condiciones del mercado y tasas preferenciales.</p>
-                            <ul class="service-benefits">
-                                <li>✓ Desde $300,000 hasta $1,000,000</li>
-                                <li>✓ Tasas preferenciales</li>
-                                <li>✓ Plazos extendidos</li>
-                                <li>✓ Evaluación especializada</li>
-                            </ul>
-                            <div class="portfolio-tech">
-                                <span class="tech-tag">Alto Monto</span>
-                                <span class="tech-tag">Premium</span>
-                                <span class="tech-tag">Especializado</span>
+        
+                            <div class="service-right">
+                                <div class="portfolio-content enhanced">
+                                    <h4>Préstamos con Garantía Vehicular</h4>
+                                    <p class="service-description">Obtén el financiamiento que necesitas utilizando tu vehículo como garantía. La opción más rápida, segura y flexible del mercado dominicano. Mantienes tu vehículo, obtienes tu dinero.</p>
+                                    
+                                    <div class="service-highlights">
+                                        <div class="highlight-box">
+                                            <i class="fas fa-dollar-sign"></i>
+                                            <div class="highlight-content">
+                                                <h5>Hasta $900,000</h5>
+                                                <span>Monto máximo disponible</span>
+                                            </div>
+                                        </div>
+                                        <div class="highlight-box">
+                                            <i class="fas fa-percent"></i>
+                                            <div class="highlight-content">
+                                                <h5>Desde 2.5%</h5>
+                                                <span>Tasa mensual competitiva</span>
+                                            </div>
+                                        </div>
+                                        <div class="highlight-box">
+                                            <i class="fas fa-calendar-alt"></i>
+                                            <div class="highlight-content">
+                                                <h5>Hasta 60 meses</h5>
+                                                <span>Plazos flexibles</span>
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                    <div class="service-features">
+                                        <h5><i class="fas fa-check-double"></i> Beneficios Principales</h5>
+                                        <div class="features-grid">
+                                            <div class="feature-column">
+                                                <ul class="service-benefits">
+                                                    <li><i class="fas fa-check-circle"></i> Montos desde $50,000 hasta $900,000</li>
+                                                    <li><i class="fas fa-check-circle"></i> Tasas competitivas desde 2.5% mensual</li>
+                                                    <li><i class="fas fa-check-circle"></i> Aprobación en 24-48 horas</li>
+                                                </ul>
+                                            </div>
+                                            <div class="feature-column">
+                                                <ul class="service-benefits">
+                                                    <li><i class="fas fa-check-circle"></i> Mantienes la posesión de tu vehículo</li>
+                                                    <li><i class="fas fa-check-circle"></i> Sin restricciones de uso</li>
+                                                    <li><i class="fas fa-check-circle"></i> Plazos flexibles hasta 60 meses</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                    <div class="additional-info">
+                                        <div class="info-tabs">
+                                            <div class="tab-item active">
+                                                <i class="fas fa-clipboard-list"></i>
+                                                <span>Requisitos Mínimos</span>
+                                            </div>
+                                            <div class="tab-content">
+                                                <ul>
+                                                    <li>• Cédula de identidad vigente</li>
+                                                    <li>• Título de propiedad del vehículo</li>
+                                                    <li>• Comprobante de ingresos</li>
+                                                    <li>• Vehículo modelo 2010 en adelante</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                    <div class="portfolio-tech enhanced">
+                                        <div class="tech-category">
+                                            <span class="category-label">Características:</span>
+                                            <div class="tech-tags">
+                                                <span class="tech-tag primary">Rápido</span>
+                                                <span class="tech-tag success">Seguro</span>
+                                                <span class="tech-tag info">Sin Complicaciones</span>
+                                                <span class="tech-tag warning">Confiable</span>
+                                            </div>
+                                        </div>
+                                        <div class="tech-category">
+                                            <span class="category-label">Garantías:</span>
+                                            <div class="tech-tags">
+                                                <span class="tech-tag outline">100% Legal</span>
+                                                <span class="tech-tag outline">Regulado</span>
+                                                <span class="tech-tag outline">Transparente</span>
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                    <div class="service-actions enhanced">
+                                        <button class="service-cta primary" onclick="openServiceModal('vehicular')">
+                                            <i class="fas fa-info-circle"></i> 
+                                            <span>Más Información</span>
+                                            <small>Detalles completos</small>
+                                        </button>
+                                        <button class="service-cta secondary" onclick="scrollToSection('calculator')">
+                                            <i class="fas fa-calculator"></i> 
+                                            <span>Calcular Préstamo</span>
+                                            <small>Simula tu cuota</small>
+                                        </button>
+                                        <button class="service-cta tertiary" onclick="scrollToSection('contact')">
+                                            <i class="fas fa-phone"></i> 
+                                            <span>Contactar Ahora</span>
+                                            <small>(809) 262-5911</small>
+                                        </button>
+                                    </div>
+        
+                                    <div class="trust-indicators">
+                                        <div class="trust-item">
+                                            <i class="fas fa-shield-check"></i>
+                                            <span>Empresa Registrada</span>
+                                        </div>
+                                        <div class="trust-item">
+                                            <i class="fas fa-users"></i>
+                                            <span>+2500 Clientes</span>
+                                        </div>
+                                        <div class="trust-item">
+                                            <i class="fas fa-award"></i>
+                                            <span>15+ Años Experiencia</span>
+                                        </div>
+                                        <div class="trust-item">
+                                            <i class="fas fa-lock"></i>
+                                            <span>100% Seguro</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <button class="service-cta" onclick="openServiceModal('alto-monto')">Más Información</button>
-                        </div>
-                    </article>
-
-                    <article class="portfolio-item" data-category="vehicular">
-                        <div class="portfolio-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
-                        <div class="portfolio-content">
-                            <h4>Asesoría Vehicular Gratuita</h4>
-                            <p>Te ayudamos a evaluar tu vehículo y elegir el mejor plan de financiamiento según el valor y condiciones de tu auto.</p>
-                            <ul class="service-benefits">
-                                <li>✓ Evaluación gratuita</li>
-                                <li>✓ Asesoría personalizada</li>
-                                <li>✓ Análisis de documentos</li>
-                                <li>✓ Sin compromiso</li>
-                            </ul>
-                            <div class="portfolio-tech">
-                                <span class="tech-tag">Gratuito</span>
-                                <span class="tech-tag">Personalizado</span>
-                                <span class="tech-tag">Profesional</span>
-                            </div>
-                            <button class="service-cta" onclick="openServiceModal('asesoria')">Más Información</button>
-                        </div>
-                    </article>
-
-                    <article class="portfolio-item" data-category="vehicular">
-                        <div class="portfolio-image" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);"></div>
-                        <div class="portfolio-content">
-                            <h4>Préstamos Express</h4>
-                            <p>¿Necesitas dinero urgente? Nuestro servicio express te permite obtener financiamiento el mismo día con tu vehículo como garantía.</p>
-                            <ul class="service-benefits">
-                                <li>✓ Aprobación en 2 horas</li>
-                                <li>✓ Documentos mínimos</li>
-                                <li>✓ Desembolso mismo día</li>
-                                <li>✓ Proceso 100% digital</li>
-                            </ul>
-                            <div class="portfolio-tech">
-                                <span class="tech-tag">Express</span>
-                                <span class="tech-tag">Urgente</span>
-                                <span class="tech-tag">Digital</span>
-                            </div>
-                            <button class="service-cta" onclick="openServiceModal('express')">Más Información</button>
-                        </div>
-                    </article>
-
-                    <article class="portfolio-item" data-category="vehicular">
-                        <div class="portfolio-image" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);"></div>
-                        <div class="portfolio-content">
-                            <h4>Crédito Vehicular Flexible</h4>
-                            <p>Línea de crédito respaldada por tu vehículo. Disponibilidad permanente para cuando más lo necesites.</p>
-                            <ul class="service-benefits">
-                                <li>✓ Línea de crédito renovable</li>
-                                <li>✓ Disponibilidad inmediata</li>
-                                <li>✓ Solo pagas intereses sobre lo usado</li>
-                                <li>✓ Sin penalizaciones por pago anticipado</li>
-                            </ul>
-                            <div class="portfolio-tech">
-                                <span class="tech-tag">Renovable</span>
-                                <span class="tech-tag">Inteligente</span>
-                                <span class="tech-tag">Sin Penalizaciones</span>
-                            </div>
-                            <button class="service-cta" onclick="openServiceModal('flexible')">Más Información</button>
                         </div>
                     </article>
                 </div>
