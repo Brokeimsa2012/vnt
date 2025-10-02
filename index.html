@@ -712,6 +712,377 @@
         }
             
     </style>
+    <style>
+        .services-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            position: relative;
+        }
+
+        .services-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: linear-gradient(135deg, #28a745 0%, #20c997 50%, #17a2b8 100%);
+            opacity: 0.03;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c5530;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #28a745, #20c997);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #6c757d;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .services-grid {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 60px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 16px;
+            padding: 40px 30px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            border: 1px solid rgba(40, 167, 69, 0.1);
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.15);
+        }
+
+        .service-card.main-service {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border: 2px solid #28a745;
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #28a745, #20c997);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .service-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #28a745, #20c997);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c5530;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .main-service .service-title {
+            font-size: 1.8rem;
+        }
+
+        .service-description {
+            color: #6c757d;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .service-features {
+            margin-bottom: 25px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: rgba(40, 167, 69, 0.05);
+            border-radius: 12px;
+            border-left: 4px solid #28a745;
+        }
+
+        .feature-icon {
+            font-size: 1.5rem;
+            margin-top: 2px;
+        }
+
+        .feature-text h5 {
+            color: #2c5530;
+            font-weight: 600;
+            margin-bottom: 4px;
+            font-size: 0.95rem;
+        }
+
+        .feature-text p {
+            color: #6c757d;
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .service-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .highlight {
+            text-align: center;
+            padding: 20px 15px;
+            background: linear-gradient(135deg, #e8f5e8, #f0f9f0);
+            border-radius: 12px;
+            border: 1px solid rgba(40, 167, 69, 0.2);
+        }
+
+        .highlight strong {
+            display: block;
+            color: #28a745;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .highlight span {
+            color: #6c757d;
+            font-size: 0.85rem;
+        }
+
+        .service-requirements {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #e8f5e8, #f0f9f0);
+            border-radius: 12px;
+        }
+
+        .service-requirements h5 {
+            color: #2c5530;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .service-requirements ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .service-requirements li {
+            color: #495057;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .service-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #218838, #1c7a6e);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #28a745;
+            border: 2px solid #28a745;
+        }
+
+        .btn-secondary:hover {
+            background: #28a745;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .trust-section {
+            margin-top: 40px;
+            padding: 40px 0;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .trust-item {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 16px;
+            border: 1px solid rgba(40, 167, 69, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .trust-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+        }
+
+        .trust-icon {
+            width: 60px;
+            height: 60px;
+            min-width: 60px;
+            min-height: 60px;
+            background: linear-gradient(135deg, #28a745, #20c997);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .trust-item h4 {
+            color: #2c5530;
+            font-weight: 600;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+
+        .trust-item p {
+            color: #6c757d;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .services-section {
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .service-card.main-service {
+                grid-column: span 1;
+            }
+            
+            .service-card {
+                padding: 30px 20px;
+            }
+            
+            .service-highlights {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-actions {
+                flex-direction: column;
+            }
+            
+            .trust-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 20px;
+            }
+            
+            .trust-item {
+                padding: 25px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .service-card {
+                padding: 25px 15px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .service-title {
+                font-size: 1.3rem;
+            }
+            
+            .main-service .service-title {
+                font-size: 1.5rem;
+            }
+        }
+        </style>
 </head>
 <body>
 
@@ -808,21 +1179,21 @@
                         
                         <div class="about-features">
                             <div class="feature-item">
-                                <span class="feature-icon">🏆</span>
+                                <span class="feature-icon"><i class="fas fa-trophy"></i></span>
                                 <div class="feature-text">
-                                    <h4>15+ Años de Experiencia</h4>
+                                    <h4>Experiencia y Confianza</h4>
                                     <p>Liderando el mercado financiero con soluciones innovadoras</p>
                                 </div>
                             </div>
                             <div class="feature-item">
-                                <span class="feature-icon">🔒</span>
+                                <span class="feature-icon"><i class="fas fa-lock"></i></span>
                                 <div class="feature-text">
                                     <h4>100% Seguro</h4>
                                     <p>Tus datos están protegidos con tecnología de encriptación</p>
                                 </div>
                             </div>
                             <div class="feature-item">
-                                <span class="feature-icon">⚡</span>
+                                <span class="feature-icon"><i class="fas fa-bolt"></i></span>
                                 <div class="feature-text">
                                     <h4>Respuesta Inmediata</h4>
                                     <p>Aprobación en menos de 24 horas</p>
@@ -844,181 +1215,103 @@
         </section>
 
         <!-- Services Section -->
-        <section id="services" class="portfolio">
+        <section id="services" class="services-section">
             <div class="container">
-                <h2 class="section-title fade-in">Nuestro Servicio Principal</h2>
-                <p class="section-subtitle fade-in">Especialistas en préstamos con garantía vehicular - Tu vehículo es tu mejor aval</p>
+                <div class="section-header">
+                    <h2 class="section-title fade-in">Nuestros Servicios Financieros</h2>
+                    <p class="section-subtitle fade-in">Soluciones financieras confiables y transparentes para hacer realidad tus proyectos</p>
+                </div>
         
-                <div class="portfolio-grid">
-                    <article class="portfolio-item featured-service full-width" data-category="vehicular">
-                        <div class="service-header">
-                            <div class="service-badge">
-                                <i class="fas fa-car"></i>
-                                <span>SERVICIO PRINCIPAL</span>
-                            </div>
-                            <div class="service-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <span class="rating-text">4.9/5 - 2,500+ clientes satisfechos</span>
-                            </div>
+                <div class="services-grid">
+                    <!-- Préstamos Vehiculares - Servicio Único -->
+                    <div class="service-card main-service fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-car"></i>
                         </div>
-        
-                        <div class="service-main-content">
-                            <div class="service-left">
-                                <div class="portfolio-image enhanced" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                                    <div class="image-overlay">
-                                        <div class="overlay-stats">
-                                            <div class="stat-item">
-                                                <h5>15+</h5>
-                                                <span>Años de experiencia</span>
-                                            </div>
-                                            <div class="stat-item">
-                                                <h5>24h</h5>
-                                                <span>Aprobación rápida</span>
-                                            </div>
-                                            <div class="stat-item">
-                                                <h5>98%</h5>
-                                                <span>Tasa de aprobación</span>
-                                            </div>
-                                        </div>
-                                        <div class="floating-icon">
-                                            <i class="fas fa-shield-alt"></i>
-                                        </div>
-                                    </div>
+                        <div class="service-badge">NUESTRO SERVICIO</div>
+                        <h3 class="service-title">Préstamos con Garantía Vehicular</h3>
+                        <p class="service-description">
+                            Tu vehículo es tu mejor aval. Obtén el financiamiento que necesitas de manera rápida y segura, 
+                            manteniendo el uso completo de tu automóvil.
+                        </p>
+                        
+                        <div class="service-features">
+                            <div class="feature-item">
+                                <span class="feature-icon">💰</span>
+                                <div class="feature-text">
+                                    <h5>Montos Flexibles</h5>
+                                    <p>Desde $25,000 hasta $300,000</p>
                                 </div>
                             </div>
-        
-                            <div class="service-right">
-                                <div class="portfolio-content enhanced">
-                                    <h4>Préstamos con Garantía Vehicular</h4>
-                                    <p class="service-description">Obtén el financiamiento que necesitas utilizando tu vehículo como garantía. La opción más rápida, segura y flexible del mercado dominicano. Mantienes tu vehículo, obtienes tu dinero.</p>
-                                    
-                                    <div class="service-highlights">
-                                        <div class="highlight-box">
-                                            <i class="fas fa-dollar-sign"></i>
-                                            <div class="highlight-content">
-                                                <h5>Hasta $900,000</h5>
-                                                <span>Monto máximo disponible</span>
-                                            </div>
-                                        </div>
-                                        <div class="highlight-box">
-                                            <i class="fas fa-percent"></i>
-                                            <div class="highlight-content">
-                                                <h5>Desde 2.5%</h5>
-                                                <span>Tasa mensual competitiva</span>
-                                            </div>
-                                        </div>
-                                        <div class="highlight-box">
-                                            <i class="fas fa-calendar-alt"></i>
-                                            <div class="highlight-content">
-                                                <h5>Hasta 60 meses</h5>
-                                                <span>Plazos flexibles</span>
-                                            </div>
-                                        </div>
-                                    </div>
-        
-                                    <div class="service-features">
-                                        <h5><i class="fas fa-check-double"></i> Beneficios Principales</h5>
-                                        <div class="features-grid">
-                                            <div class="feature-column">
-                                                <ul class="service-benefits">
-                                                    <li><i class="fas fa-check-circle"></i> Montos desde $50,000 hasta $900,000</li>
-                                                    <li><i class="fas fa-check-circle"></i> Tasas competitivas desde 2.5% mensual</li>
-                                                    <li><i class="fas fa-check-circle"></i> Aprobación en 24-48 horas</li>
-                                                </ul>
-                                            </div>
-                                            <div class="feature-column">
-                                                <ul class="service-benefits">
-                                                    <li><i class="fas fa-check-circle"></i> Mantienes la posesión de tu vehículo</li>
-                                                    <li><i class="fas fa-check-circle"></i> Sin restricciones de uso</li>
-                                                    <li><i class="fas fa-check-circle"></i> Plazos flexibles hasta 60 meses</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-        
-                                    <div class="additional-info">
-                                        <div class="info-tabs">
-                                            <div class="tab-item active">
-                                                <i class="fas fa-clipboard-list"></i>
-                                                <span>Requisitos Mínimos</span>
-                                            </div>
-                                            <div class="tab-content">
-                                                <ul>
-                                                    <li>• Cédula de identidad vigente</li>
-                                                    <li>• Título de propiedad del vehículo</li>
-                                                    <li>• Comprobante de ingresos</li>
-                                                    <li>• Vehículo modelo 2010 en adelante</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-        
-                                    <div class="portfolio-tech enhanced">
-                                        <div class="tech-category">
-                                            <span class="category-label">Características:</span>
-                                            <div class="tech-tags">
-                                                <span class="tech-tag primary">Rápido</span>
-                                                <span class="tech-tag success">Seguro</span>
-                                                <span class="tech-tag info">Sin Complicaciones</span>
-                                                <span class="tech-tag warning">Confiable</span>
-                                            </div>
-                                        </div>
-                                        <div class="tech-category">
-                                            <span class="category-label">Garantías:</span>
-                                            <div class="tech-tags">
-                                                <span class="tech-tag outline">100% Legal</span>
-                                                <span class="tech-tag outline">Regulado</span>
-                                                <span class="tech-tag outline">Transparente</span>
-                                            </div>
-                                        </div>
-                                    </div>
-        
-                                    <div class="service-actions enhanced">
-                                        <button class="service-cta primary" onclick="openServiceModal('vehicular')">
-                                            <i class="fas fa-info-circle"></i> 
-                                            <span>Más Información</span>
-                                            <small>Detalles completos</small>
-                                        </button>
-                                        <button class="service-cta secondary" onclick="scrollToSection('calculator')">
-                                            <i class="fas fa-calculator"></i> 
-                                            <span>Calcular Préstamo</span>
-                                            <small>Simula tu cuota</small>
-                                        </button>
-                                        <button class="service-cta tertiary" onclick="scrollToSection('contact')">
-                                            <i class="fas fa-phone"></i> 
-                                            <span>Contactar Ahora</span>
-                                            <small>(849) 564-5911</small>
-                                        </button>
-                                    </div>
-        
-                                    <div class="trust-indicators">
-                                        <div class="trust-item">
-                                            <i class="fas fa-shield-check"></i>
-                                            <span>Empresa Registrada</span>
-                                        </div>
-                                        <div class="trust-item">
-                                            <i class="fas fa-users"></i>
-                                            <span>+2500 Clientes</span>
-                                        </div>
-                                        <div class="trust-item">
-                                            <i class="fas fa-award"></i>
-                                            <span>15+ Años Experiencia</span>
-                                        </div>
-                                        <div class="trust-item">
-                                            <i class="fas fa-lock"></i>
-                                            <span>100% Seguro</span>
-                                        </div>
-                                    </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">⏱️</span>
+                                <div class="feature-text">
+                                    <h5>Respuesta Rápida</h5>
+                                    <p>Evaluación en 24-48 horas</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">🚗</span>
+                                <div class="feature-text">
+                                    <h5>Mantén tu Vehículo</h5>
+                                    <p>Úsalo normalmente mientras pagas</p>
                                 </div>
                             </div>
                         </div>
-                    </article>
+
+                        <div class="service-requirements">
+                            <h5>Requisitos Básicos:</h5>
+                            <ul>
+                                <li>✓ Cédula de identidad vigente</li>
+                                <li>✓ Título de propiedad del vehículo</li>
+                                <li>✓ Comprobante de ingresos</li>
+                                <li>✓ Vehículo modelo 2015 en adelante</li>
+                            </ul>
+                        </div>
+
+                        <div class="service-actions">
+                            <button class="btn-primary" onclick="scrollToSection('calculator')">
+                                <i class="fas fa-calculator"></i> Calcular Préstamo
+                            </button>
+                            <button class="btn-secondary" onclick="scrollToSection('contact')">
+                                <i class="fas fa-phone"></i> Consultar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección de garantías -->
+                <div class="trust-section">
+                    <div class="trust-grid">
+                        <div class="trust-item">
+                            <div class="trust-icon">
+                                <i class="fas fa-shield-check"></i>
+                            </div>
+                            <h4>100% Legal y Regulado</h4>
+                            <p>Cumplimos con todas las normativas financieras</p>
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h4>Transparencia Total</h4>
+                            <p>Sin costos ocultos, todo claro desde el inicio</p>
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h4>Atención Rápida</h4>
+                            <p>Respuesta ágil para tus necesidades urgentes</p>
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-icon">
+                                <i class="fas fa-user-shield"></i>
+                            </div>
+                            <h4>Datos Protegidos</h4>
+                            <p>Tu información personal está completamente segura</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1027,7 +1320,7 @@
         <section id="calculator" class="calculator-section">
             <div class="container">
                 <h2 class="section-title fade-in">Calculadora de Préstamos</h2>
-                <p class="section-subtitle fade-in">Calcula tu préstamo y conoce tus pagos mensuales</p>
+                <p class="section-subtitle fade-in" style="margin-bottom: 40px;">Calcula tu préstamo y conoce tus pagos mensuales</p>
                 
                 <div class="calculator-container">
                     <div class="calculator-form">
@@ -1213,6 +1506,644 @@
                 </div>
             </div>
         </section>
+
+        <!-- Process Steps Section -->
+        <section class="process-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title fade-in">¿Cómo Obtener tu Préstamo?</h2>
+                    <p class="section-subtitle fade-in">Un proceso simple y transparente en solo 4 pasos</p>
+                </div>
+                
+                <div class="process-timeline">
+                    <div class="process-step fade-in" data-step="1">
+                        <div class="step-number">01</div>
+                        <div class="step-content">
+                            <div class="step-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <h3>Completa la Solicitud</h3>
+                            <p>Llena nuestro formulario con tu información básica y detalles del vehículo. Solo toma 5 minutos.</p>
+                            <ul class="step-details">
+                                <li>Información personal</li>
+                                <li>Datos del vehículo</li>
+                                <li>Monto solicitado</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step fade-in" data-step="2">
+                        <div class="step-number">02</div>
+                        <div class="step-content">
+                            <div class="step-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h3>Evaluación Rápida</h3>
+                            <p>Nuestro equipo evalúa tu solicitud y el valor de tu vehículo en tiempo récord.</p>
+                            <ul class="step-details">
+                                <li>Verificación de documentos</li>
+                                <li>Evaluación vehicular</li>
+                                <li>Análisis crediticio</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step fade-in" data-step="3">
+                        <div class="step-number">03</div>
+                        <div class="step-content">
+                            <div class="step-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h3>Aprobación</h3>
+                            <p>Recibe la respuesta de aprobación con las condiciones del préstamo en 24-48 horas.</p>
+                            <ul class="step-details">
+                                <li>Notificación inmediata</li>
+                                <li>Condiciones claras</li>
+                                <li>Sin sorpresas</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step fade-in" data-step="4">
+                        <div class="step-number">04</div>
+                        <div class="step-content">
+                            <div class="step-icon">
+                                <i class="fas fa-money-bill-wave"></i>
+                            </div>
+                            <h3>Recibe tu Dinero</h3>
+                            <p>Firma el contrato y recibe el dinero directamente en tu cuenta bancaria.</p>
+                            <ul class="step-details">
+                                <li>Firma del contrato</li>
+                                <li>Transferencia inmediata</li>
+                                <li>Mantén tu vehículo</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="process-cta">
+                    <button class="btn-gradient" onclick="scrollToSection('contact')">
+                        <i class="fas fa-play"></i>
+                        Iniciar mi Solicitud Ahora
+                    </button>
+                    <p>¡En menos de 48 horas podrías tener el dinero en tu cuenta!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="why-choose-section">
+            <div class="floating-elements">
+                <div class="float-element float-1"></div>
+                <div class="float-element float-2"></div>
+                <div class="float-element float-3"></div>
+                <div class="float-element float-4"></div>
+            </div>
+            
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title fade-in">¿Por Qué Elegir V&T?</h2>
+                    <p class="section-subtitle fade-in">Somos diferentes porque ponemos tu tranquilidad primero</p>
+                </div>
+                
+                <div class="features-showcase">
+                    <div class="feature-card hover-lift fade-in">
+                        <div class="feature-visual">
+                            <div class="feature-bg-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="feature-main-icon">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </div>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Proceso Ultra Rápido</h3>
+                            <p>Mientras otros te hacen esperar semanas, nosotros te damos una respuesta en 24 horas. Tu tiempo vale oro.</p>
+                            <div class="feature-stats">
+                                <div class="stat">
+                                    <strong>24hrs</strong>
+                                    <span>Respuesta máxima</span>
+                                </div>
+                                <div class="stat">
+                                    <strong>5min</strong>
+                                    <span>Solicitud online</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card hover-lift fade-in">
+                        <div class="feature-visual">
+                            <div class="feature-bg-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="feature-main-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Atención Humana</h3>
+                            <p>No eres un número para nosotros. Cada cliente recibe atención personalizada de asesores expertos que entienden tus necesidades.</p>
+                            <div class="feature-stats">
+                                <div class="stat">
+                                    <strong>1:1</strong>
+                                    <span>Asesor personal</span>
+                                </div>
+                                <div class="stat">
+                                    <strong>24/7</strong>
+                                    <span>Soporte disponible</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card hover-lift fade-in">
+                        <div class="feature-visual">
+                            <div class="feature-bg-icon">
+                                <i class="fas fa-shield"></i>
+                            </div>
+                            <div class="feature-main-icon">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Máxima Seguridad</h3>
+                            <p>Tu información está protegida con los más altos estándares de seguridad. Cumplimos con todas las regulaciones financieras.</p>
+                            <div class="feature-stats">
+                                <div class="stat">
+                                    <strong>SSL</strong>
+                                    <span>Encriptación</span>
+                                </div>
+                                <div class="stat">
+                                    <strong>100%</strong>
+                                    <span>Legal</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card hover-lift fade-in">
+                        <div class="feature-visual">
+                            <div class="feature-bg-icon">
+                                <i class="fas fa-gem"></i>
+                            </div>
+                            <div class="feature-main-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Sin Letra Pequeña</h3>
+                            <p>Total transparencia desde el primer día. Todas las condiciones son claras, sin costos ocultos ni sorpresas desagradables.</p>
+                            <div class="feature-stats">
+                                <div class="stat">
+                                    <strong>0</strong>
+                                    <span>Costos ocultos</span>
+                                </div>
+                                <div class="stat">
+                                    <strong>100%</strong>
+                                    <span>Transparente</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="guarantee-banner">
+                    <div class="guarantee-content">
+                        <div class="guarantee-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="guarantee-text">
+                            <h3>Garantía de Satisfacción</h3>
+                            <p>Si no estás 100% satisfecho con nuestro servicio, trabajaremos hasta que lo estés. Tu confianza es nuestro compromiso.</p>
+                        </div>
+                        <button class="guarantee-btn" onclick="scrollToSection('contact')">
+                            Conoce Más
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <style>
+        /* Process Section Styles */
+        .process-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .process-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(40, 167, 69, 0.05) 0%, transparent 70%);
+            animation: rotateBackground 20s linear infinite;
+            z-index: -1;
+        }
+        
+        @keyframes rotateBackground {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .process-timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin: 60px 0;
+            position: relative;
+        }
+        
+        .process-step {
+            position: relative;
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+            overflow: hidden;
+        }
+        
+        .process-step::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #28a745, #20c997);
+        }
+        
+        .process-step:hover {
+            transform: translateY(-10px);
+            border-color: #28a745;
+            box-shadow: 0 20px 60px rgba(40, 167, 69, 0.2);
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #28a745, #20c997);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 20px rgba(40, 167, 69, 0.3);
+        }
+        
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(40, 167, 69, 0.1), rgba(32, 201, 151, 0.1));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+            color: #28a745;
+            border: 3px solid rgba(40, 167, 69, 0.2);
+        }
+        
+        .step-content h3 {
+            color: #2c5530;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .step-content p {
+            color: #6c757d;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .step-details {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .step-details li {
+            padding: 8px 0;
+            color: #495057;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .step-details li::before {
+            content: '✓';
+            color: #28a745;
+            font-weight: bold;
+            width: 20px;
+        }
+        
+        .process-cta {
+            text-align: center;
+            margin-top: 60px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .btn-gradient {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);
+            z-index: 999;
+        }
+        
+        .btn-gradient:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(40, 167, 69, 0.4);
+        }
+        
+        .process-cta p {
+            color: #6c757d;
+            margin-top: 15px;
+            font-style: italic;
+        }
+        
+        /* Why Choose Us Section */
+        .why-choose-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+        }
+        
+        .float-element {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: floatAnimation 15s infinite ease-in-out;
+        }
+        
+        .float-1 {
+            width: 100px;
+            height: 100px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .float-2 {
+            width: 60px;
+            height: 60px;
+            top: 20%;
+            right: 20%;
+            animation-delay: 3s;
+        }
+        
+        .float-3 {
+            width: 80px;
+            height: 80px;
+            bottom: 30%;
+            left: 5%;
+            animation-delay: 6s;
+        }
+        
+        .float-4 {
+            width: 120px;
+            height: 120px;
+            bottom: 10%;
+            right: 10%;
+            animation-delay: 9s;
+        }
+        
+        @keyframes floatAnimation {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(90deg); }
+            50% { transform: translateY(-10px) rotate(180deg); }
+            75% { transform: translateY(-30px) rotate(270deg); }
+        }
+        
+        .why-choose-section .section-title {
+            color: white;
+        }
+        
+        .why-choose-section .section-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .features-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+        
+        .feature-visual {
+            position: relative;
+            margin-bottom: 25px;
+        }
+        
+        .feature-bg-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 6rem;
+            color: rgba(40, 167, 69, 0.05);
+            z-index: 1;
+        }
+        
+        .feature-main-icon {
+            position: relative;
+            z-index: 2;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #28a745, #20c997);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);
+        }
+        
+        .feature-content h3 {
+            color: #2c5530;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .feature-content p {
+            color: #6c757d;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        
+        .feature-stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat strong {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #28a745;
+            margin-bottom: 5px;
+        }
+        
+        .stat span {
+            font-size: 0.85rem;
+            color: #6c757d;
+        }
+        
+        .guarantee-banner {
+            margin-top: 60px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .guarantee-content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            justify-content: space-between;
+        }
+        
+        .guarantee-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #b8860b;
+            flex-shrink: 0;
+        }
+        
+        .guarantee-text h3 {
+            color: #2c5530;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .guarantee-text p {
+            color: #495057;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .guarantee-btn {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+        
+        .guarantee-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(40, 167, 69, 0.3);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .process-section, .why-choose-section {
+                padding: 60px 0;
+            }
+            
+            .process-timeline {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .features-showcase {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .guarantee-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .feature-stats {
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .process-step, .feature-card {
+                padding: 30px 20px;
+            }
+            
+            .guarantee-banner {
+                padding: 30px 20px;
+            }
+        }
+        </style>
 
         <!-- Contact Section -->
         <section id="contact" class="contact">
