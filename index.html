@@ -751,7 +751,7 @@
             transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background: linear-gradient(90deg, #28a745, #20c997);
+            background: linear-gradient(90deg, #008722, #00be16);
             border-radius: 2px;
         }
 
@@ -1000,15 +1000,17 @@
             height: 60px;
             min-width: 60px;
             min-height: 60px;
-            background: linear-gradient(135deg, #28a745, #20c997);
+            background: white;
+            border: 2px solid #28a745;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 20px;
             font-size: 1.5rem;
-            color: white;
+            color: #28a745;
             flex-shrink: 0;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.2);
         }
 
         .trust-item h4 {
@@ -1285,7 +1287,7 @@
                     <div class="trust-grid">
                         <div class="trust-item">
                             <div class="trust-icon">
-                                <i class="fas fa-shield-check"></i>
+                                <i class="fas fa-trophy"></i>
                             </div>
                             <h4>100% Legal y Regulado</h4>
                             <p>Cumplimos con todas las normativas financieras</p>
@@ -1602,8 +1604,8 @@
             
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title fade-in">¿Por Qué Elegir V&T?</h2>
-                    <p class="section-subtitle fade-in">Somos diferentes porque ponemos tu tranquilidad primero</p>
+                    <h2 class="section-title" style="color: white !important;">¿Por Qué Elegir V&T?</h2>
+                    <p class="section-subtitle fade-in" style="color: rgba(255, 255, 255, 0.9) !important;">Somos diferentes porque ponemos tu tranquilidad primero</p>
                 </div>
                 
                 <div class="features-showcase">
@@ -1952,11 +1954,11 @@
         }
         
         .why-choose-section .section-title {
-            color: white;
+            color: white !important;
         }
         
         .why-choose-section .section-subtitle {
-            color: rgba(255, 255, 255, 0.9);
+            color: rgba(255, 255, 255, 0.9) !important;
         }
         
         .features-showcase {
@@ -2722,7 +2724,7 @@
         
         // Configuración de la API
         const GEMINI_API_KEY = 'AIzaSyBeQ9Fx39o5g9Sr5YeAYc6i6RnDFA-Mpe0';
-        const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent';
+        const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent';
         
         // Función corregida
         async function sendQuickReply(message) {
@@ -2742,23 +2744,17 @@
             chatMessages.scrollTop = chatMessages.scrollHeight;
             
             try {
-                const contextualMessage = `Eres un asistente virtual de V&T Financiamientos, empresa dominicana de préstamos con 15+ años de experiencia. 
-        
-        Servicios:
-        - Préstamos vehiculares ($50,000-$900,000)
-        - Préstamos por nómina empresarial
-        - Préstamos personales ($25,000-$500,000)
-        - Préstamos empresariales ($100,000+)
-        - Préstamos hipotecarios
-        - Consolidación de deudas
-        
-        Contacto:
-        - Dirección: C. Eugenio Deschamps #14, Los Prados, Santo Domingo
-        - Teléfono: (849) 564-5911
-        - Email: info@vyt.do.com
-        - Horarios: Lun-Vie 8AM-6PM, Sáb 9AM-2PM
-        
-        Responde profesional y conciso. Consulta: ${message}`;
+                const contextualMessage = `Eres un asistente virtual de V&T Financiamientos, empresa dominicana con más de 15 años de experiencia. 
+            Solo ofrecemos préstamos con garantía vehicular. No realizamos préstamos personales, empresariales, por nómina ni hipotecarios. 
+            Nuestros préstamos vehiculares son desde $50,000 hasta $900,000, rápidos y seguros, manteniendo el uso del vehículo. 
+            Requisitos: cédula vigente, título de propiedad del vehículo, comprobante de ingresos, vehículo modelo 2015 en adelante.
+            Contacto:
+            - Dirección: C. Eugenio Deschamps #14, Los Prados, Santo Domingo
+            - Teléfono: (849) 564-5911
+            - Email: info@vyt.do.com
+            - Horarios: Lun-Vie 8AM-6PM, Sáb 9AM-2PM
+
+            Responde profesional y conciso. Consulta: ${message}`;
                 
                 const response = await fetch(`${GEMINI_API_URL}?key=${GEMINI_API_KEY}`, {
                     method: 'POST',
