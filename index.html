@@ -1404,7 +1404,7 @@
                                 <div class="stars"><i class="fas fa-shield-alt"></i></div>
                                 <p>"En V&T Financiamientos construimos relaciones duraderas basadas en la honestidad y transparencia. Cada proceso, cada tasa y cada condición son explicados claramente a nuestros clientes, sin letra pequeña ni sorpresas."</p>
                                 <div class="testimonial-author">
-                                    <div class="author-avatar"></div>
+                                    
                                     <div class="author-info">
                                         <h4>Confianza</h4>
                                         <span>Valor Fundamental</span>
@@ -1418,7 +1418,7 @@
                                 <div class="stars"><i class="fas fa-bolt"></i></div>
                                 <p>"Entendemos que las necesidades financieras requieren soluciones rápidas. Por eso hemos optimizado nuestros procesos para ofrecer aprobaciones en 24 horas, sin comprometer la calidad del servicio."</p>
                                 <div class="testimonial-author">
-                                    <div class="author-avatar"></div>
+                                    
                                     <div class="author-info">
                                         <h4>Rapidez</h4>
                                         <span>Valor Operativo</span>
@@ -1432,7 +1432,7 @@
                                 <div class="stars"><i class="fas fa-handshake"></i></div>
                                 <p>"Cada cliente es único y merece una solución personalizada. Nuestro equipo se dedica a entender las necesidades específicas de cada persona para ofrecer el mejor servicio financiero posible."</p>
                                 <div class="testimonial-author">
-                                    <div class="author-avatar"></div>
+                                    
                                     <div class="author-info">
                                         <h4>Compromiso</h4>
                                         <span>Valor Humano</span>
@@ -2725,12 +2725,10 @@
                 notification.style.display = 'none';
             }
         }
+
+        const BACKEND_API_URL = 'https://app.vyt.do/api/chat'; // Cambiar a tu dominio backend
         
-        // Configuración de la API
-        const GEMINI_API_KEY = 'AIzaSyBeQ9Fx39o5g9Sr5YeAYc6i6RnDFA-Mpe0';
-        const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent';
-        
-        // Función corregida
+        // Función segura - Usa la API del backend (sin token)
         async function sendQuickReply(message) {
             const chatMessages = document.getElementById('chatMessages');
             
@@ -2748,60 +2746,38 @@
             chatMessages.scrollTop = chatMessages.scrollHeight;
             
             try {
-                const contextualMessage = `Eres un asistente virtual de V&T Financiamientos, empresa dominicana con más de 15 años de experiencia. 
-            Solo ofrecemos préstamos con garantía vehicular. No realizamos préstamos personales, empresariales, por nómina ni hipotecarios. 
-            Nuestros préstamos vehiculares son desde $50,000 hasta $900,000, rápidos y seguros, manteniendo el uso del vehículo. 
-            Requisitos: cédula vigente, título de propiedad del vehículo, comprobante de ingresos, vehículo modelo 2015 en adelante.
-            Contacto:
-            - Dirección: C. Eugenio Deschamps #14, Los Prados, Santo Domingo
-            - Teléfono: (849) 564-5911
-            - Email: contacto@vyt.do
-            - Horarios: Lun-Vie 8AM-6PM, Sáb 9AM-2PM
-
-            Nuestra página web para el dashboard está en https://app.vyt.do/
-
-            Si la consulta no está relacionada con préstamos vehiculares, responde que no puedes ayudar y proporciona el contacto (849) 564-5911 para asistencia personalizada.
-
-            El link del WhatsApp de V&T es: https://wa.me/18495645911
-
-            (Con mensaje predefinido) https://wa.me/18495645911?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20pr%C3%A9stamos%20vehiculares
-            Responde profesional y conciso. Consulta: ${message}`;
-                
-                const response = await fetch(`${GEMINI_API_URL}?key=${GEMINI_API_KEY}`, {
+                // 🔒 Llamar al backend seguro (sin exponer credenciales)
+                const response = await fetch(BACKEND_API_URL, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-                        contents: [{
-                            parts: [{
-                                text: contextualMessage
-                            }]
-                        }]
+                        message: message
                     })
                 });
                 
+                // Remover indicador de "escribiendo..."
+                if (chatMessages.contains(typingIndicator)) {
+                    chatMessages.removeChild(typingIndicator);
+                }
+                
                 if (!response.ok) {
-                    const errorText = await response.text();
-                    throw new Error(`API Error ${response.status}: ${errorText}`);
+                    throw new Error(`API Error ${response.status}`);
                 }
                 
                 const data = await response.json();
                 
-                // Remover indicador de "escribiendo..."
-                chatMessages.removeChild(typingIndicator);
-                
                 // Agregar respuesta de la IA
                 const botResponse = document.createElement('div');
                 botResponse.className = 'chat-message bot';
-                const aiText = data.candidates?.[0]?.content?.parts?.[0]?.text || 
-                              'Lo siento, contacta al (849) 564-5911 para asistencia personalizada.';
+                const aiText = data.message || 'Lo siento, contacta al (849) 564-5911 para asistencia personalizada.';
                 
                 botResponse.innerHTML = `<p>${aiText}</p>`;
                 chatMessages.appendChild(botResponse);
                 
             } catch (error) {
-                console.error('Error Gemini:', error);
+                console.error('Error Chat:', error);
                 
                 if (chatMessages.contains(typingIndicator)) {
                     chatMessages.removeChild(typingIndicator);
@@ -2813,7 +2789,7 @@
                     <p>Disculpa, problemas técnicos. Contacta:</p>
                     <ul>
                         <li>📞 (849) 564-5911</li>
-                        <li>📧 info@vyt.do.com</li>
+                        <li>📧 contacto@vyt.do</li>
                         <li>📍 Los Prados, Santo Domingo</li>
                     </ul>
                 `;
