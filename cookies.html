@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Políticas de Cookies - V&T Financiamientos Diversos</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/images/vnt Logo - icon.png" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background: linear-gradient(180deg, #e8f5e9 0%, #ffffff 100%);
+        }
+
+        header {
+            background: linear-gradient(135deg, #28a745 0%, #2e7d5e 100%);
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 3em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            color: #a8e6cf;
+            font-size: 1.4em;
+            font-weight: 300;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            color: #134d3a;
+            font-size: 2.2em;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 4px solid #3fa579;
+        }
+
+        h3 {
+            color: #1a5c47;
+            font-size: 1.5em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.05em;
+            text-align: justify;
+        }
+
+        ul {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            font-size: 1.05em;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #2e7d5e 0%, #3fa579 100%);
+            color: #ffffff;
+            padding: 35px 40px;
+            margin: 30px 0;
+            border-radius: 15px;
+            box-shadow: 0 12px 40px rgba(46, 125, 94, 0.25);
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+            pointer-events: none;
+            border-radius: 15px;
+        }
+
+        .highlight-box ul {
+            position: relative;
+            z-index: 1;
+        }
+
+        .highlight-box li {
+            color: #ffffff;
+        }
+
+        .highlight-box p {
+            color: #ffffff;
+        }
+
+        .important-note {
+            background: linear-gradient(135deg, #1c3d5a 0%, #2a5a7e 100%);
+            color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .important-note h3 {
+            color: #a8d8ea;
+            margin-top: 0;
+        }
+
+        .important-note p {
+            text-align: left;
+        }
+
+        .cookie-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .cookie-table th {
+            background: linear-gradient(135deg, #2e7d5e 0%, #3fa579 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .cookie-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .cookie-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .cookie-table tr:hover {
+            background: #f5f5f5;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #2e7d5e 0%, #3fa579 100%);
+            color: #ffffff;
+            padding: 50px 40px;
+            border-radius: 12px;
+            margin-top: 50px;
+        }
+
+        .contact-section h2 {
+            color: #ffffff;
+            border-bottom-color: #ffffff;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-item p {
+            margin-bottom: 10px;
+            text-align: left;
+            font-size: 1.1em;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #0f3a2a 0%, #134d3a 100%);
+            color: #ffffff;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 0;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .date {
+            font-style: italic;
+            color: #3fa579;
+            font-weight: 600;
+            font-size: 1.1em;
+            margin-top: 30px;
+        }
+
+        .intro-section {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 50px;
+        }
+
+        i.fas {
+            margin-right: 10px;
+            color: #3fa579;
+            font-size: 1.1em;
+        }
+
+        .contact-item i.fas {
+            color: #2e7d5e;
+            font-size: 1.5em;
+            margin-right: 8px;
+            margin-bottom: 10px;
+        }
+
+        .logo img{
+            height: 120px;
+        }
+
+        .cookie-icon {
+            font-size: 2em;
+            color: #3fa579;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2em;
+            }
+
+            h2 {
+                font-size: 1.8em;
+            }
+
+            .container {
+                padding: 40px 15px;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+
+            .cookie-table {
+                font-size: 0.9em;
+            }
+
+            .cookie-table th,
+            .cookie-table td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="vnt Logo - transparent white.png" alt=""></div>
+        <h1>V&T Financiamientos Diversos</h1>
+        <p class="subtitle">Políticas de Uso de Cookies y Tecnologías de Rastreo</p>
+    </header>
+
+    <div class="container">
+        <div class="intro-section">
+            <div style="text-align: center;">
+                <i class="fas fa-cookie-bite cookie-icon"></i>
+            </div>
+            <h2>1. ¿Qué son las Cookies?</h2>
+            <p>Las cookies son pequeños archivos de texto que se almacenan en su dispositivo (ordenador, tablet o móvil) cuando visita nuestro sitio web. Estas tecnologías nos permiten reconocer su navegador, recordar sus preferencias y mejorar su experiencia de usuario en nuestra plataforma digital.</p>
+
+            <div class="important-note">
+                <h3>Aceptación de Cookies</h3>
+                <p>Al continuar navegando en nuestro sitio web después de recibir el aviso de cookies, usted consiente expresamente el uso de cookies según lo descrito en esta política. Su consentimiento es necesario para el funcionamiento óptimo de nuestros servicios digitales.</p>
+            </div>
+        </div>
+
+        <section>
+            <h2>2. Tipos de Cookies que Utilizamos</h2>
+            <p>V&T Financiamientos Diversos utiliza diferentes tipos de cookies para diversos propósitos legítimos:</p>
+            
+            <h3>2.1 Cookies Estrictamente Necesarias</h3>
+            <div class="highlight-box">
+                <p style="text-align: left;">Estas cookies son esenciales para el funcionamiento de nuestro sitio web y no pueden ser desactivadas. Sin ellas, no podríamos proporcionar servicios básicos como:</p>
+                <ul>
+                    <li>Acceso seguro a áreas restringidas del sitio</li>
+                    <li>Mantenimiento de sesión durante su visita</li>
+                    <li>Gestión del carrito de solicitudes</li>
+                    <li>Verificación de identidad para procesos de préstamo</li>
+                    <li>Protección contra fraude y ataques cibernéticos</li>
+                </ul>
+            </div>
+
+            <h3>2.2 Cookies de Rendimiento y Análisis</h3>
+            <p>Estas cookies nos ayudan a entender cómo los visitantes interactúan con nuestro sitio web, recopilando información anónima sobre:</p>
+            <ul>
+                <li>Páginas visitadas y tiempo de permanencia</li>
+                <li>Rutas de navegación dentro del sitio</li>
+                <li>Errores encontrados durante la navegación</li>
+                <li>Dispositivos y navegadores utilizados</li>
+                <li>Procedencia geográfica de los visitantes</li>
+            </ul>
+
+            <h3>2.3 Cookies de Funcionalidad</h3>
+            <p>Permiten recordar sus elecciones y preferencias para proporcionar una experiencia personalizada:</p>
+            <ul>
+                <li>Idioma preferido</li>
+                <li>Configuraciones de visualización</li>
+                <li>Información de formularios previamente completados</li>
+                <li>Preferencias de comunicación</li>
+            </ul>
+
+            <h3>2.4 Cookies de Marketing y Publicidad</h3>
+            <p>Utilizadas para mostrar contenido relevante y medir la efectividad de nuestras campañas:</p>
+            <ul>
+                <li>Seguimiento de conversiones</li>
+                <li>Personalización de anuncios</li>
+                <li>Remarketing en plataformas externas</li>
+                <li>Análisis de comportamiento de usuario</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>3. Cookies Específicas Utilizadas</h2>
+            <p>A continuación, detallamos las cookies específicas que V&T Financiamientos Diversos implementa en su plataforma:</p>
+
+            <table class="cookie-table">
+                <thead>
+                    <tr>
+                        <th>Nombre de Cookie</th>
+                        <th>Tipo</th>
+                        <th>Propósito</th>
+                        <th>Duración</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>vyt_session</strong></td>
+                        <td>Necesaria</td>
+                        <td>Mantiene su sesión activa durante el proceso de solicitud</td>
+                        <td>Sesión</td>
+                    </tr>
+                    <tr>
+                        <td><strong>vyt_auth</strong></td>
+                        <td>Necesaria</td>
+                        <td>Verifica su identidad y autenticación</td>
+                        <td>24 horas</td>
+                    </tr>
+                    <tr>
+                        <td><strong>vyt_preferences</strong></td>
+                        <td>Funcionalidad</td>
+                        <td>Guarda sus preferencias de navegación</td>
+                        <td>1 año</td>
+                    </tr>
+                    <tr>
+                        <td><strong>_ga</strong></td>
+                        <td>Análisis</td>
+                        <td>Google Analytics - Distingue usuarios únicos</td>
+                        <td>2 años</td>
+                    </tr>
+                    <tr>
+                        <td><strong>_gid</strong></td>
+                        <td>Análisis</td>
+                        <td>Google Analytics - Distingue usuarios</td>
+                        <td>24 horas</td>
+                    </tr>
+                    <tr>
+                        <td><strong>_fbp</strong></td>
+                        <td>Marketing</td>
+                        <td>Facebook Pixel - Seguimiento de conversiones</td>
+                        <td>3 meses</td>
+                    </tr>
+                    <tr>
+                        <td><strong>vyt_tracking</strong></td>
+                        <td>Marketing</td>
+                        <td>Seguimiento de campañas y fuentes de tráfico</td>
+                        <td>6 meses</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>4. Tecnologías de Rastreo Adicionales</h2>
+            <p>Además de las cookies, V&T Financiamientos Diversos utiliza otras tecnologías de rastreo para mejorar nuestros servicios:</p>
+
+            <h3>4.1 Web Beacons (Píxeles de Seguimiento)</h3>
+            <p>Pequeñas imágenes transparentes incrustadas en correos electrónicos y páginas web que nos permiten:</p>
+            <ul>
+                <li>Confirmar la apertura de correos electrónicos</li>
+                <li>Verificar que los mensajes llegaron correctamente</li>
+                <li>Medir la interacción con nuestras comunicaciones</li>
+                <li>Evaluar la efectividad de nuestras campañas</li>
+            </ul>
+
+            <h3>4.2 Almacenamiento Local (Local Storage)</h3>
+            <p>Permite almacenar datos localmente en su navegador para:</p>
+            <ul>
+                <li>Mejorar la velocidad de carga del sitio</li>
+                <li>Mantener información de formularios en progreso</li>
+                <li>Recordar configuraciones sin necesidad de cookies</li>
+            </ul>
+
+            <h3>4.3 Huellas Digitales (Fingerprinting)</h3>
+            <div class="important-note">
+                <h3>Identificación de Dispositivos</h3>
+                <p>Utilizamos técnicas de fingerprinting para crear un identificador único de su dispositivo basado en su configuración de hardware y software. Esto nos ayuda a prevenir fraude y garantizar la seguridad de nuestras transacciones.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>5. Cookies de Terceros</h2>
+            <p>Nuestro sitio web puede contener cookies de terceros confiables que nos ayudan a proporcionar servicios de calidad:</p>
+
+            <div class="highlight-box">
+                <h3 style="color: #ffffff; margin-top: 0;">Proveedores Externos Autorizados:</h3>
+                <ul>
+                    <li><strong>Google Analytics:</strong> Análisis de tráfico y comportamiento de usuarios</li>
+                    <li><strong>Facebook/Meta:</strong> Publicidad dirigida y medición de campañas</li>
+                    <li><strong>Google Ads:</strong> Gestión de anuncios y remarketing</li>
+                    <li><strong>Hotjar:</strong> Mapas de calor y grabaciones de sesión</li>
+                    <li><strong>LiveChat:</strong> Soporte en tiempo real y asistencia al cliente</li>
+                    <li><strong>Zendesk:</strong> Gestión de tickets y soporte técnico</li>
+                </ul>
+            </div>
+
+            <p><strong>Importante:</strong> Estos terceros tienen sus propias políticas de privacidad y cookies. V&T Financiamientos Diversos no controla ni es responsable de las prácticas de privacidad de estos terceros.</p>
+        </section>
+
+        <section>
+            <h2>6. Control y Gestión de Cookies</h2>
+            <p>Usted tiene derecho a gestionar sus preferencias de cookies, aunque esto puede afectar su experiencia en nuestro sitio web.</p>
+
+            <h3>6.1 Configuración del Navegador</h3>
+            <p>Puede configurar su navegador para:</p>
+            <ul>
+                <li>Bloquear todas las cookies</li>
+                <li>Aceptar solo cookies de sitios específicos</li>
+                <li>Eliminar cookies al cerrar el navegador</li>
+                <li>Recibir notificaciones antes de aceptar cookies</li>
+            </ul>
+
+            <h3>6.2 Instrucciones por Navegador</h3>
+            <ul>
+                <li><strong>Google Chrome:</strong> Configuración → Privacidad y seguridad → Cookies y otros datos de sitios</li>
+                <li><strong>Mozilla Firefox:</strong> Opciones → Privacidad y seguridad → Cookies y datos del sitio</li>
+                <li><strong>Safari:</strong> Preferencias → Privacidad → Gestionar datos de sitios web</li>
+                <li><strong>Microsoft Edge:</strong> Configuración → Cookies y permisos de sitios</li>
+            </ul>
+
+            <div class="important-note">
+                <h3>Consecuencias de Bloquear Cookies</h3>
+                <p>Si decide bloquear o eliminar cookies, algunas funcionalidades de nuestro sitio web pueden no estar disponibles, incluyendo:</p>
+                <ul style="margin-left: 20px; margin-top: 15px;">
+                    <li>Imposibilidad de mantener sesión iniciada</li>
+                    <li>Pérdida de información en formularios</li>
+                    <li>Experiencia de usuario no personalizada</li>
+                    <li>Dificultades en el proceso de solicitud de préstamos</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>7. Cookies y Datos Personales</h2>
+            <p>Algunas cookies pueden recopilar información que se considera datos personales según las regulaciones de protección de datos vigentes. Esta información se maneja de acuerdo con nuestra Política de Privacidad.</p>
+
+            <div class="highlight-box">
+                <h3 style="color: #ffffff; margin-top: 0;">Protección de Información Personal</h3>
+                <ul>
+                    <li>Las cookies con datos personales están cifradas</li>
+                    <li>Acceso restringido solo a personal autorizado</li>
+                    <li>No vendemos información recopilada por cookies</li>
+                    <li>Cumplimos con todas las regulaciones de protección de datos</li>
+                    <li>Implementamos medidas de seguridad técnicas y organizativas</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>8. Cookies en Aplicaciones Móviles</h2>
+            <p>Si utiliza nuestra aplicación móvil, también podemos usar tecnologías similares a las cookies para:</p>
+
+            <ul>
+                <li>Identificadores de publicidad móvil (IDFA, GAID)</li>
+                <li>Tokens de sesión y autenticación</li>
+                <li>Almacenamiento local de preferencias</li>
+                <li>Análisis de uso de la aplicación</li>
+                <li>Notificaciones push personalizadas</li>
+            </ul>
+
+            <p>Puede gestionar estas tecnologías a través de la configuración de su dispositivo móvil en la sección de privacidad o publicidad.</p>
+        </section>
+
+        <section>
+            <h2>9. Transferencia Internacional de Datos</h2>
+            <p>Algunas cookies de terceros pueden transferir datos fuera de la República Dominicana. Estos proveedores están obligados a cumplir con estándares internacionales de protección de datos, incluyendo:</p>
+
+            <ul>
+                <li>Cláusulas contractuales estándar</li>
+                <li>Marcos de privacidad certificados</li>
+                <li>Medidas de seguridad equivalentes</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>10. Actualizaciones de esta Política</h2>
+            <p>V&T Financiamientos Diversos se reserva el derecho de actualizar esta Política de Cookies en cualquier momento para reflejar cambios en nuestras prácticas, tecnologías disponibles o requisitos legales.</p>
+
+            <p><strong>Las actualizaciones entrarán en vigor inmediatamente al ser publicadas en nuestro sitio web.</strong> Le recomendamos revisar esta política periódicamente para mantenerse informado sobre cómo utilizamos cookies y tecnologías de rastreo.</p>
+            
+            <p class="date">Última actualización: Noviembre 2025</p>
+        </section>
+
+        <section>
+            <h2>11. Preguntas Frecuentes</h2>
+            
+            <h3>¿Por qué necesitan usar cookies?</h3>
+            <p>Las cookies son esenciales para proporcionar una experiencia de usuario segura, eficiente y personalizada. Nos permiten mejorar constantemente nuestros servicios y proteger sus datos.</p>
+
+            <h3>¿Puedo usar el sitio sin aceptar cookies?</h3>
+            <p>Puede navegar nuestro sitio rechazando algunas cookies, pero ciertas funcionalidades esenciales requerirán cookies obligatorias para funcionar correctamente.</p>
+
+            <h3>¿Las cookies contienen información sensible?</h3>
+            <p>Las cookies en sí mismas no almacenan información financiera directa como números de cuenta o contraseñas. Sin embargo, pueden contener identificadores que nos permiten asociar su navegación con su perfil de usuario.</p>
+
+            <h3>¿Con qué frecuencia debo revisar mi configuración de cookies?</h3>
+            <p>Recomendamos revisar sus preferencias de cookies cada 6 meses o cada vez que note cambios en su experiencia de navegación.</p>
+        </section>
+
+        <div class="contact-section">
+            <h2>12. Contacto sobre Cookies</h2>
+            <p>Si tiene preguntas específicas sobre nuestra política de cookies o desea ejercer sus derechos relacionados con el uso de cookies, contáctenos:</p>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <p><strong><i class="fas fa-envelope"></i> Email</strong></p>
+                    <p>contacto@vyt.do</p>
+                </div>
+                <div class="contact-item">
+                    <p><strong><i class="fas fa-phone-alt"></i> Teléfono</strong></p>
+                    <p>(849) 564-5911</p>
+                    <p>(809) 508-2582</p>
+                </div>
+                <div class="contact-item">
+                    <p><strong><i class="fas fa-map-marker-alt"></i> Dirección</strong></p>
+                    <p>Calle Eugenio Deschamps #14, Santo Domingo, Distrito Nacional, República Dominicana</p>
+                </div>
+                <div class="contact-item">
+                    <p><strong><i class="fas fa-clock"></i> Horario</strong></p>
+                    <p>Lunes a Viernes<br>9:00 AM - 6:00 PM</p>
+                </div>
+            </div>
+
+            <div class="highlight-box" style="background: linear-gradient(135deg, #28a745 0%, #3fa579 100%); box-shadow: 0 12px 40px rgba(40, 167, 69, 0.25); margin-top: 30px;">
+                <p style="text-align: left;"><strong>Compromiso de Transparencia:</strong> Nos comprometemos a responder sus consultas sobre cookies y privacidad en un plazo máximo de 15 días hábiles.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 V&T Financiamientos Diversos. Todos los derechos reservados.</p>
+        <p>Préstamos con Garantía Vehicular | Uso Responsable de Cookies</p>
+    </footer>
+</body>
+</html>

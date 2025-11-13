@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Políticas de Privacidad - V&T Financiamientos Diversos</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/images/vnt Logo - icon.png" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background: linear-gradient(180deg, #e8f5e9 0%, #ffffff 100%);
+        }
+
+        header {
+            background: linear-gradient(135deg, #28a745 0%, #2e7d5e 100%);
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 3em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            color: #a8e6cf;
+            font-size: 1.4em;
+            font-weight: 300;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            color: #134d3a;
+            font-size: 2.2em;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 4px solid #3fa579;
+        }
+
+        h3 {
+            color: #1a5c47;
+            font-size: 1.5em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.05em;
+            text-align: justify;
+        }
+
+        ul {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            font-size: 1.05em;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #2e7d5e 0%, #3fa579 100%);
+            color: #ffffff;
+            padding: 35px 40px;
+            margin: 30px 0;
+            border-radius: 15px;
+            box-shadow: 0 12px 40px rgba(46, 125, 94, 0.25);
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+            pointer-events: none;
+            border-radius: 15px;
+        }
+
+        .highlight-box ul {
+            position: relative;
+            z-index: 1;
+        }
+
+        .highlight-box li {
+            color: #ffffff;
+        }
+
+        .highlight-box p {
+            color: #ffffff;
+        }
+
+        .important-note {
+            background: linear-gradient(135deg, #1c3d5a 0%, #2a5a7e 100%);
+            color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .important-note h3 {
+            color: #a8d8ea;
+            margin-top: 0;
+        }
+
+        .important-note p {
+            text-align: left;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #2e7d5e 0%, #3fa579 100%);
+            color: #ffffff;
+            padding: 50px 40px;
+            border-radius: 12px;
+            margin-top: 50px;
+        }
+
+        .contact-section h2 {
+            color: #ffffff;
+            border-bottom-color: #ffffff;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-item p {
+            margin-bottom: 10px;
+            text-align: left;
+            font-size: 1.1em;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #0f3a2a 0%, #134d3a 100%);
+            color: #ffffff;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 0;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .date {
+            font-style: italic;
+            color: #3fa579;
+            font-weight: 600;
+            font-size: 1.1em;
+            margin-top: 30px;
+        }
+
+        .intro-section {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 50px;
+        }
+
+        /* Estilos para iconos Font Awesome */
+        i.fas {
+            margin-right: 10px;
+            color: #3fa579;
+            font-size: 1.1em;
+        }
+
+        .contact-item i.fas {
+            color: #2e7d5e;
+            font-size: 1.5em;
+            margin-right: 8px;
+            margin-bottom: 10px;
+        }
+
+        .logo img{
+            height: 120px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2em;
+            }
+
+            h2 {
+                font-size: 1.8em;
+            }
+
+            .container {
+                padding: 40px 15px;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="vnt Logo - transparent white.png" alt=""></div>
+        <h1>V&T Financiamientos Diversos</h1>
+        <p class="subtitle">Políticas de Privacidad y Protección de Datos</p>
+    </header>
+
+    <div class="container">
+        <div class="intro-section">
+            <h2>1. Introducción</h2>
+            <p>En V&T Financiamientos Diversos, nos comprometemos a proteger la privacidad y seguridad de la información personal de nuestros clientes. Esta Política de Privacidad describe cómo recopilamos, usamos, almacenamos y protegemos su información al solicitar y obtener préstamos con garantía vehicular.</p>
+
+            <div class="important-note">
+                <h3>Compromiso de Confidencialidad</h3>
+                <p>La protección de sus datos personales es nuestra máxima prioridad. Cumplimos con todas las regulaciones aplicables de protección de datos y mantenemos los más altos estándares de seguridad en el manejo de su información.</p>
+            </div>
+        </div>
+
+        <section>
+            <h2>2. Información que Recopilamos</h2>
+            <p>Para procesar su solicitud de préstamo con garantía vehicular, recopilamos la siguiente información:</p>
+            
+            <h3>2.1 Datos Personales</h3>
+            <ul>
+                <li>Nombre completo y documentos de identidad</li>
+                <li>Fecha de nacimiento y estado civil</li>
+                <li>Dirección de residencia y comprobantes de domicilio</li>
+                <li>Números de teléfono y correos electrónicos</li>
+                <li>Información laboral y financiera</li>
+            </ul>
+
+            <h3>2.2 Información del Vehículo</h3>
+            <ul>
+                <li>Marca, modelo, año y número de serie (VIN)</li>
+                <li>Documentación de propiedad y registro vehicular</li>
+                <li>Estado y valuación del vehículo</li>
+                <li>Fotografías del vehículo</li>
+                <li>Historial de mantenimiento (cuando aplique)</li>
+            </ul>
+
+            <h3>2.3 Información Financiera</h3>
+            <ul>
+                <li>Historial crediticio y referencias bancarias</li>
+                <li>Ingresos y gastos mensuales</li>
+                <li>Información sobre otras obligaciones financieras</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>3. Uso de la Información</h2>
+            <p>Utilizamos su información personal únicamente para los siguientes propósitos:</p>
+            
+            <div class="highlight-box">
+                <ul>
+                    <li><strong>Evaluación de solicitudes:</strong> Para analizar su capacidad de pago y aprobar su préstamo</li>
+                    <li><strong>Gestión de préstamos:</strong> Para administrar y dar seguimiento a su cuenta y pagos</li>
+                    <li><strong>Comunicación:</strong> Para contactarlo sobre su préstamo, pagos y actualizaciones importantes</li>
+                    <li><strong>Cumplimiento legal:</strong> Para cumplir con obligaciones regulatorias y legales</li>
+                    <li><strong>Prevención de fraude:</strong> Para proteger tanto sus intereses como los nuestros</li>
+                    <li><strong>Mejora de servicios:</strong> Para optimizar nuestros procesos y atención al cliente</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>4. Protección y Seguridad de los Datos</h2>
+            <p>Implementamos medidas de seguridad técnicas, administrativas y físicas para proteger su información:</p>
+            
+            <ul>
+                <li>Cifrado de datos sensibles durante transmisión y almacenamiento</li>
+                <li>Control de acceso restringido solo a personal autorizado</li>
+                <li>Sistemas de respaldo y recuperación de datos</li>
+                <li>Capacitación continua del personal en protección de datos</li>
+                <li>Auditorías periódicas de seguridad</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>5. Compartir Información</h2>
+            <p>Su información personal no será vendida, alquilada ni compartida con terceros, excepto en las siguientes circunstancias:</p>
+
+            <ul>
+                <li><strong>Proveedores de servicios:</strong> Empresas que nos ayudan a operar (verificación de datos, procesamiento de pagos)</li>
+                <li><strong>Autoridades legales:</strong> Cuando sea requerido por ley o autoridades competentes</li>
+                <li><strong>Agencias de crédito:</strong> Para consultar y reportar historial crediticio según sea necesario</li>
+                <li><strong>Aseguradoras:</strong> En caso de siniestros relacionados con el vehículo en garantía</li>
+            </ul>
+
+            <div class="important-note">
+                <h3>Protección ante Terceros</h3>
+                <p>Todos los terceros con los que compartimos información están contractualmente obligados a mantener la confidencialidad y usar los datos únicamente para los fines autorizados.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>6. Retención de Datos</h2>
+            <p>Conservamos su información personal durante el tiempo necesario para:</p>
+            
+            <div class="highlight-box">
+                <ul>
+                    <li>Cumplir con los propósitos para los cuales fue recopilada</li>
+                    <li>Satisfacer requerimientos legales y regulatorios</li>
+                    <li>Resolver disputas y hacer cumplir nuestros acuerdos</li>
+                </ul>
+                <p><strong>Una vez finalizada la relación comercial</strong>, mantendremos sus datos durante el período que establezca la legislación aplicable, después del cual serán eliminados de forma segura.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>7. Sus Derechos</h2>
+            <p>Como titular de los datos personales, usted tiene los siguientes derechos:</p>
+
+            <ul>
+                <li><strong>Acceso:</strong> Solicitar información sobre qué datos tenemos sobre usted</li>
+                <li><strong>Rectificación:</strong> Corregir datos inexactos o incompletos</li>
+                <li><strong>Cancelación:</strong> Solicitar la eliminación de sus datos (sujeto a obligaciones legales)</li>
+                <li><strong>Oposición:</strong> Oponerse al tratamiento de sus datos en ciertos casos</li>
+                <li><strong>Portabilidad:</strong> Recibir sus datos en formato estructurado</li>
+                <li><strong>Revocación de consentimiento:</strong> Retirar su consentimiento en cualquier momento</li>
+            </ul>
+
+            <p>Para ejercer estos derechos, puede contactarnos a través de los medios indicados en la sección de contacto.</p>
+        </section>
+
+        <section>
+            <h2>8. Cookies y Tecnologías de Rastreo</h2>
+            <p>Si utiliza nuestro sitio web o plataformas digitales, podemos usar cookies y tecnologías similares para mejorar su experiencia, analizar el uso de nuestros servicios y personalizar contenido. Puede configurar su navegador para rechazar cookies, aunque esto puede afectar algunas funcionalidades.</p>
+        </section>
+
+        <section>
+            <h2>9. Cambios a esta Política</h2>
+            <p>Nos reservamos el derecho de actualizar esta Política de Privacidad periódicamente. Cualquier cambio significativo será comunicado a través de nuestros canales oficiales. Le recomendamos revisar esta política regularmente para mantenerse informado sobre cómo protegemos su información.</p>
+            
+            <p class="date">Última actualización: Noviembre 2025</p>
+        </section>
+
+        <div class="contact-section">
+            <h2>10. Contacto</h2>
+            <p>Si tiene preguntas, inquietudes o desea ejercer sus derechos relacionados con la privacidad de sus datos, puede contactarnos:</p>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <p><strong><i class="fas fa-envelope"></i> Email</strong></p>
+                    <p>contacto@vyt.do</p>
+                </div>
+                <div class="contact-item">
+                    <p><strong><i class="fas fa-phone-alt"></i> Teléfono</strong></p>
+                    <p>(849) 564-5911</p>
+                    <p>(809) 508-2582</p>
+                </div>
+                <div class="contact-item">
+                    <p><strong><i class="fas fa-map-marker-alt"></i> Dirección</strong></p>
+                    <p>Calle Eugenio Deschamps #14, Santo Domingo, Distrito Nacional, República Dominicana</p>
+                </div>
+                <div class="contact-item">
+                    <p><strong><i class="fas fa-clock"></i> Horario</strong></p>
+                    <p>Lunes a Viernes<br>9:00 AM - 6:00 PM</p>
+                </div>
+            </div>
+
+            <div class="highlight-box" style="background: linear-gradient(135deg, #28a745 0%, #3fa579 100%); box-shadow: 0 12px 40px rgba(40, 167, 69, 0.25); margin-top: 30px;">
+                <p style="text-align: left;"><strong>Compromiso de Respuesta:</strong> Nos comprometemos a responder sus solicitudes relacionadas con privacidad en un plazo no mayor a 15 días hábiles.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 V&T Financiamientos Diversos. Todos los derechos reservados.</p>
+        <p>Préstamos con Garantía Vehicular | Compromiso con su Privacidad</p>
+    </footer>
+</body>
+</html>
