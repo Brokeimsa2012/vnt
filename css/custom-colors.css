@@ -1,0 +1,253 @@
+/* ====================================
+   COLORES PERSONALIZADOS V&T
+   Verde Primario: #15a34a
+   Azul Contraste: #002b4b
+   ==================================== */
+
+:root {
+    --bs-primary: #15a34a;
+    --bs-primary-rgb: 21, 163, 74;
+    --bs-secondary: #002b4b;
+    --bs-secondary-rgb: 0, 43, 75;
+    --bs-light-green: #86efac;
+    --bs-dark-green: #166534;
+}
+
+/* ====================================
+   BOTONES - COLORES PRIMARIOS
+   ==================================== */
+.btn-primary {
+    background-color: #15a34a !important;
+    border-color: #15a34a !important;
+    color: #fff !important;
+}
+
+.btn-primary:hover {
+    background-color: #166534 !important;
+    border-color: #166534 !important;
+}
+
+.btn-primary:focus,
+.btn-primary.focus {
+    background-color: #166534 !important;
+    border-color: #166534 !important;
+    box-shadow: 0 0 0 0.25rem rgba(21, 163, 74, 0.5) !important;
+}
+
+.btn-primary:active,
+.btn-primary.active {
+    background-color: #15803d !important;
+    border-color: #15803d !important;
+}
+
+/* ====================================
+   BOTONES - COLORES SECUNDARIOS
+   ==================================== */
+.btn-secondary {
+    background-color: #002b4b !important;
+    border-color: #002b4b !important;
+    color: #fff !important;
+}
+
+.btn-secondary:hover {
+    background-color: #001f35 !important;
+    border-color: #001f35 !important;
+}
+
+.btn-secondary:focus,
+.btn-secondary.focus {
+    background-color: #001f35 !important;
+    border-color: #001f35 !important;
+    box-shadow: 0 0 0 0.25rem rgba(0, 43, 75, 0.5) !important;
+}
+
+/* ====================================
+   ENLACES Y TEXTOS
+   ==================================== */
+a {
+    color: #15a34a;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #166534;
+}
+
+.text-primary {
+    color: #15a34a !important;
+}
+
+.text-secondary {
+    color: #002b4b !important;
+}
+
+/* ====================================
+   FONDOS
+   ==================================== */
+.bg-primary {
+    background-color: #15a34a !important;
+}
+
+.bg-primary-light {
+    background-color: #86efac !important;
+}
+
+.bg-secondary {
+    background-color: #002b4b !important;
+}
+
+/* ====================================
+   BORDES
+   ==================================== */
+.border-primary {
+    border-color: #15a34a !important;
+}
+
+.border-secondary {
+    border-color: #002b4b !important;
+}
+
+/* ====================================
+   INPUTS Y FORMULARIOS
+   ==================================== */
+.form-control:focus {
+    border-color: #15a34a;
+    box-shadow: 0 0 0 0.2rem rgba(21, 163, 74, 0.25);
+}
+
+.form-control:hover {
+    border-color: #15a34a;
+}
+
+/* ====================================
+   BADGES
+   ==================================== */
+.badge-primary {
+    background-color: #15a34a !important;
+}
+
+.badge-secondary {
+    background-color: #002b4b !important;
+}
+
+/* ====================================
+   CARDS Y COMPONENTES
+   ==================================== */
+.card {
+    border-top: 3px solid #15a34a;
+}
+
+/* ====================================
+   NAVBAR
+   ==================================== */
+.navbar-light .navbar-nav .nav-link {
+    color: #333;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+    color: #15a34a !important;
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+    border-bottom: 3px solid #15a34a;
+}
+
+/* ====================================
+   PROGRESSBAR
+   ==================================== */
+.progress-bar {
+    background-color: #15a34a !important;
+}
+
+/* ====================================
+   TABLAS
+   ==================================== */
+.table-primary {
+    background-color: #15a34a;
+    color: #fff;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #86efac;
+}
+
+/* ====================================
+   DROPDOWN
+   ==================================== */
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: #15a34a;
+    color: #fff;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+    background-color: #15a34a;
+}
+
+/* ====================================
+   PAGINACIÓN
+   ==================================== */
+.pagination .page-link {
+    color: #15a34a;
+}
+
+.pagination .page-link:hover {
+    background-color: #15a34a;
+    color: #fff;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #15a34a;
+    border-color: #15a34a;
+}
+
+/* ====================================
+   ALERTS
+   ==================================== */
+.alert-primary {
+    background-color: #86efac;
+    border-color: #15a34a;
+    color: #333;
+}
+
+.alert-secondary {
+    background-color: #e0ebf5;
+    border-color: #002b4b;
+    color: #002b4b;
+}
+
+/* ====================================
+   ELEMENTOS ESPECIALES
+   ==================================== */
+.spinner-border.text-primary {
+    color: #15a34a !important;
+}
+
+.hero-section {
+    background-color: #15a34a;
+}
+
+.highlight {
+    color: #15a34a;
+    font-weight: 600;
+}
+
+.highlight-dark {
+    color: #002b4b;
+    font-weight: 600;
+}
+
+/* ====================================
+   HOVER EFFECTS
+   ==================================== */
+.hover-green:hover {
+    background-color: #15a34a !important;
+    color: #fff !important;
+}
+
+.hover-blue:hover {
+    background-color: #002b4b !important;
+    color: #fff !important;
+}
