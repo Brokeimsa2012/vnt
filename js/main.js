@@ -104,12 +104,101 @@
 
 let chatOpen = false;
 const BACKEND_API_URL = 'https://app.vyt.do/api/chat'; // Cambiar a tu dominio backend
+const CHAT_STORAGE_KEY = 'vyt_chat_history';
+
+// Cargar conversación guardada al inicializar
+document.addEventListener('DOMContentLoaded', function() {
+    loadChatHistory();
+});
+
+// Función para guardar el historial del chat en localStorage
+function saveChatHistory() {
+    const chatMessages = document.getElementById('chatMessages');
+    if (!chatMessages) return;
+    
+    const messages = [];
+    chatMessages.querySelectorAll('.chat-message').forEach(msg => {
+        const isUser = msg.classList.contains('user');
+        const isWelcome = msg.classList.contains('welcome-message');
+        const isTyping = msg.classList.contains('typing');
+        
+        // No guardar mensajes de bienvenida ni typing
+        if (!isWelcome && !isTyping) {
+            const text = msg.querySelector('p')?.textContent || '';
+            messages.push({
+                type: isUser ? 'user' : 'bot',
+                text: text
+            });
+        }
+    });
+    
+    localStorage.setItem(CHAT_STORAGE_KEY, JSON.stringify(messages));
+}
+
+// Función para cargar el historial del chat desde localStorage
+function loadChatHistory() {
+    const chatMessages = document.getElementById('chatMessages');
+    if (!chatMessages) return;
+    
+    const savedMessages = localStorage.getItem(CHAT_STORAGE_KEY);
+    if (!savedMessages) return;
+    
+    try {
+        const messages = JSON.parse(savedMessages);
+        
+        // Limpiar mensajes existentes excepto el de bienvenida
+        const welcomeMsg = chatMessages.querySelector('.welcome-message');
+        chatMessages.innerHTML = '';
+        if (welcomeMsg) {
+            chatMessages.appendChild(welcomeMsg);
+        }
+        
+        // Agregar mensajes guardados
+        messages.forEach(msg => {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `chat-message ${msg.type}`;
+            messageDiv.innerHTML = `<p>${msg.text}</p>`;
+            chatMessages.appendChild(messageDiv);
+        });
+        
+        // Auto-scroll al final
+        setTimeout(() => {
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }, 100);
+    } catch (error) {
+        console.error('Error loading chat history:', error);
+    }
+}
+
+// Función para limpiar el historial del chat
+function clearChatHistory() {
+    localStorage.removeItem(CHAT_STORAGE_KEY);
+    const chatMessages = document.getElementById('chatMessages');
+    if (!chatMessages) return;
+    
+    // Mantener solo el mensaje de bienvenida
+    const welcomeMsg = chatMessages.querySelector('.welcome-message');
+    chatMessages.innerHTML = '';
+    if (welcomeMsg) {
+        chatMessages.appendChild(welcomeMsg);
+    }
+}
 
 // Chat Functions
 function toggleChat() {
     const chatWindow = document.getElementById('chatWindow');
     chatOpen = !chatOpen;
     chatWindow.style.display = chatOpen ? 'block' : 'none';
+    
+    // Auto-scroll cuando se abre el chat
+    if (chatOpen) {
+        setTimeout(() => {
+            const chatMessages = document.getElementById('chatMessages');
+            if (chatMessages) {
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+        }, 100);
+    }
 }
 
 // Función segura - Usa la API del backend (sin token)
@@ -180,6 +269,8 @@ async function sendQuickReply(message) {
         chatMessages.appendChild(errorResponse);
     }
     
+    // Guardar el historial y scroll
+    saveChatHistory();
     chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
