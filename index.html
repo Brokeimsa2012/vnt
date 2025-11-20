@@ -232,63 +232,6 @@
     </div>
     <!-- Chat Widget End -->
 
-    <!-- Chat Widget Start -->
-    <div id="chatWindow" class="chat-window" style="display: none;">
-        <div class="chat-header">
-            <div class="chat-header-content">
-                <div class="chat-header-title">
-                    <i class="fas fa-sparkles"></i>
-                    <span>Asistente IA</span>
-                </div>
-                <button class="chat-close-btn" onclick="toggleChat()" aria-label="Cerrar chat">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <p class="chat-header-subtitle">¿Cómo podemos ayudarte hoy?</p>
-        </div>
-
-        <div class="chat-messages" id="chatMessages">
-            <div class="chat-message bot welcome-message">
-                <div class="message-avatar">
-                    <i class="fas fa-robot"></i>
-                </div>
-                <p>¡Hola! 👋 Soy tu asistente IA de V&T Financiamientos. Estoy aquí para resolver tus dudas sobre préstamos y financiamiento.</p>
-            </div>
-        </div>
-
-        <div class="chat-input-area">
-            <div class="quick-replies-container">
-                <button class="quick-reply-btn" onclick="sendQuickReply('¿Cuáles son las tasas de interés?')">
-                    <i class="fas fa-percentage"></i> Tasas
-                </button>
-                <button class="quick-reply-btn" onclick="sendQuickReply('¿Cómo solicito un préstamo?')">
-                    <i class="fas fa-file-signature"></i> Solicitar
-                </button>
-                <button class="quick-reply-btn" onclick="sendQuickReply('¿Cuál es el monto máximo?')">
-                    <i class="fas fa-money-bill-wave"></i> Montos
-                </button>
-                <button class="quick-reply-btn" onclick="sendQuickReply('Quiero hablar con un agente')">
-                    <i class="fas fa-headset"></i> Agente
-                </button>
-            </div>
-
-            <div class="chat-input-wrapper">
-                <input 
-                    type="text" 
-                    class="chat-input" 
-                    id="chatInput" 
-                    placeholder="Escribe tu pregunta..." 
-                    onkeypress="handleChatKeyPress(event)"
-                    aria-label="Mensaje de chat"
-                >
-                <button class="chat-send-btn" onclick="sendChatMessage()" aria-label="Enviar mensaje">
-                    <i class="fas fa-paper-plane"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-    <!-- Chat Widget End -->
-
     <style>
         /* Chat Widget Styles in Style.css */
     </style>
