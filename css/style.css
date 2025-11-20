@@ -982,24 +982,29 @@
 .chat-messages {
     flex: 1;
     overflow-y: auto;
+    overflow-x: hidden;
     padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 12px;
     background: linear-gradient(to bottom, rgba(21, 163, 74, 0.02) 0%, transparent 50%);
+    min-height: 0;
+    scroll-behavior: smooth;
 }
 
 .chat-messages::-webkit-scrollbar {
-    width: 6px;
+    width: 8px;
 }
 
 .chat-messages::-webkit-scrollbar-track {
     background: transparent;
+    border-radius: 10px;
 }
 
 .chat-messages::-webkit-scrollbar-thumb {
     background: rgba(21, 163, 74, 0.3);
-    border-radius: 3px;
+    border-radius: 10px;
+    min-height: 40px;
 }
 
 .chat-messages::-webkit-scrollbar-thumb:hover {
